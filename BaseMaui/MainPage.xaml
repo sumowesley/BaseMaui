@@ -4,7 +4,9 @@
              x:Class="BaseMaui.MainPage">
 
     <ScrollView>
-        <VerticalStackLayout
+        <Label HorizontalOptions="Center" VerticalOptions="Center" Text="Welcome, Josh." />
+        <!-- Original layout
+            <VerticalStackLayout
             Padding="30,0"
             Spacing="25">
             <Image
@@ -30,7 +32,7 @@
                 SemanticProperties.Hint="Counts the number of times you click"
                 Clicked="OnCounterClicked"
                 HorizontalOptions="Fill" />
-        </VerticalStackLayout>
+        </VerticalStackLayout>-->
     </ScrollView>
 
 </ContentPage>
