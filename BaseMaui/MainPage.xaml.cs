@@ -20,6 +20,12 @@
 
         //    SemanticScreenReader.Announce(CounterBtn.Text);
         //}
+
+        private void OnComplete(object sender, EventArgs e)
+        {
+            Entry entry = (Entry)sender;
+            entry.Unfocus();
+        }
     }
 
 }
