@@ -4,36 +4,77 @@
              x:Class="BaseMaui.MainPage"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:insets="https://schemas.the49.com/dotnet/2023/maui"
-             insets:Insets.EdgeToEdge="{Binding IsToggled, Source={x:Reference ToggleSwitch}}"
-             NavigationPage.HasNavigationBar="False"
+             x:Name="PageContainer"
+             NavigationPage.HasNavigationBar="True"
              Shell.NavBarIsVisible="False">
-    <ContentPage.Triggers>
-        <DataTrigger TargetType="ContentPage" Binding="{Binding IsFocused, Source={x:Reference EntryField}}" Value="True">
-            <Setter Property="insets:Insets.EdgeToEdge" Value="False"/>
-        </DataTrigger>
-    </ContentPage.Triggers>
+    
 
     
 
-    <Grid RowDefinitions="Auto,Auto,*" HorizontalOptions="Fill" VerticalOptions="Fill">
+    <!--<Grid RowDefinitions="Auto,Auto,*" HorizontalOptions="Fill" VerticalOptions="Fill" insets:Insets.CancelIOSPadding="{Binding IsToggled, Source={x:Reference iOSFixSwitch}}">
         <Grid Grid.Row="0" HeightRequest="100" Background="Red" >
             <Label Text="This is the header row" HorizontalOptions="Center" VerticalOptions="Center"/>
         </Grid>
 
-        <Grid Grid.Row="1" HeightRequest="100" Background="Pink" >
-            <VerticalStackLayout HorizontalOptions="Center" VerticalOptions="Center">
-                <Label Text="Is app currently using full screen?" HorizontalOptions="Center" VerticalOptions="Center"/>
-                <Label Text="{Binding IsToggled, Source={x:Reference ToggleSwitch}}" HorizontalOptions="Center" FontSize="18" VerticalOptions="Center"/>
-                <Switch HorizontalOptions="Center" x:Name="ToggleSwitch"/>
-            </VerticalStackLayout>
+        <Grid Grid.Row="1" RowDefinitions="Auto,Auto,Auto" Background="Pink" >
+            <Grid Grid.Row="0" ColumnDefinitions="*,Auto" HorizontalOptions="Fill" Margin="12"> 
+                <Label Text="Use full screen mode?" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Switch Grid.Column="1" HorizontalOptions="Center" x:Name="ToggleSwitch"/>
+            </Grid>
+            <Grid Grid.Row="1" ColumnDefinitions="*,Auto" HorizontalOptions="Fill" Margin="12"> 
+                <Label Text="On entry focus, should app stay full screen?" HorizontalOptions="Start" VerticalOptions="Center"/>
+                <Switch Grid.Column="1" HorizontalOptions="Center" x:Name="OnFocusSwitch"/>
+            </Grid>
+            <Grid Grid.Row="2" ColumnDefinitions="*,Auto" HorizontalOptions="Fill" Margin="12"> 
+                <VerticalStackLayout>
+                    <Label Text="Include The49 fix for iOS devices?" HorizontalOptions="Start" VerticalOptions="Center"/>
+                    <Label Text="(Set to false and see that full screen doesn't work on iOS)" HorizontalOptions="Start" VerticalOptions="Center"/>
+                </VerticalStackLayout>
+                <Switch Grid.Column="1" HorizontalOptions="Center" x:Name="iOSFixSwitch"/>
+            </Grid>
         </Grid>
 
-        <ScrollView Grid.Row="2" HorizontalOptions="Fill" VerticalOptions="Fill" Background="Orange">
+        <ScrollView Grid.Row="2" HorizontalOptions="Fill" VerticalOptions="Fill" Background="Orange" Padding="{Binding BottomInsetThickness, Source={x:Static insets:Insets.Current}}">
             <Grid HorizontalOptions="Fill" VerticalOptions="Fill">
-                <Entry Background="White" HorizontalOptions="Fill" VerticalOptions="End" Completed="OnComplete" x:Name="EntryField"/>
+                <Entry Background="White" HorizontalOptions="Fill" TextColor="Black" VerticalOptions="End" Completed="OnComplete" x:Name="EntryField"/>
             </Grid>
         </ScrollView>
 
+    </Grid>-->
+
+    <Grid RowDefinitions="Auto,Auto,*" HorizontalOptions="Fill" VerticalOptions="Fill" x:Name="SubscriptionPageGrid">
+        <Grid Grid.Row="0" Background="Red" HeightRequest="80">
+            <Label Text="Nav Header Row" TextColor="White"/>
+        </Grid>
+        <Grid Grid.Row="1" Background="Purple" HeightRequest="50">
+            <Label Text="Tab View Row" TextColor="White"/>
+        </Grid>
+
+        <ScrollView Grid.Row="2" Grid.RowSpan="1" Margin="1,0,1,0" ZIndex="1" HorizontalOptions="Fill" x:Name="VATStatusScrollView" Background="Black" >
+            <Grid RowDefinitions="Auto,Auto" HorizontalOptions="Fill" VerticalOptions="Start" Padding="12,0,12,0" MaximumWidthRequest="774" >
+                <Grid Grid.Row="0" RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto" HorizontalOptions="Fill" x:Name="ContentArea" MaximumWidthRequest="750" Background="Pink">
+                    <Entry Grid.Row="0" Margin="0,0,0,12" />
+                    <Entry Grid.Row="1" Margin="0,0,0,12" />
+                    <Entry Grid.Row="2" Margin="0,0,0,12" />
+                    <Entry Grid.Row="3" Margin="0,0,0,12" />
+                    <Entry Grid.Row="4" Margin="0,0,0,12" />
+                    <Entry Grid.Row="5" Margin="0,0,0,12" />
+                    <Entry Grid.Row="6" Margin="0,0,0,12" />
+                </Grid>
+
+                <Grid Grid.Row="1" HorizontalOptions="Fill" MaximumWidthRequest="700" x:Name="ButtonRow" IsVisible="False" Padding="0,48,0,32">
+                    <Button Text="Save Button under content" Padding="12" HorizontalOptions="Center"/>
+                </Grid>
+            </Grid>
+        </ScrollView>
+
+        <Grid Grid.Row="2" ZIndex="1" HorizontalOptions="Fill" VerticalOptions="End" x:Name="VATStatusPageFooter"  Background="Red" Padding="0,48,0,32">
+            <Button Text="floating Save Button" Padding="12" HorizontalOptions="Center"/>
+        </Grid>
+
+        <Grid.GestureRecognizers>
+            <TapGestureRecognizer Tapped="GetPosition"/>
+        </Grid.GestureRecognizers>
     </Grid>
 
 </ContentPage>
