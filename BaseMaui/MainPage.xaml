@@ -7,7 +7,8 @@
              xmlns:local="clr-namespace:BaseMaui"
              x:Name="PageContainer"
              NavigationPage.HasNavigationBar="True"
-             Shell.NavBarIsVisible="False">
+             Shell.NavBarIsVisible="False"
+             x:DataType="local:MainPageViewModel">
     
 
     
