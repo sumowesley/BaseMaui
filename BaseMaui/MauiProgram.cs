@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Maui;
 using Microsoft.Extensions.Logging;
 using The49.Maui.Insets;
+using Nalu;
 
 namespace BaseMaui
 {
@@ -12,6 +13,7 @@ namespace BaseMaui
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .UseNaluNavigation<App>(nav => nav.AddPages((pageType) => pageType.Name.Replace("Page", "ViewModel")))
                 .UseInsets()
                 .ConfigureFonts(fonts =>
                 {
