@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -7,7 +8,20 @@ using System.Threading.Tasks;
 
 namespace BaseMaui
 {
-    public class MainPageViewModel : ObservableObject
+    public partial class MainPageViewModel : ObservableObject
     {
+
+        public MainPageViewModel()
+        {
+        
+        }
+
+
+        [RelayCommand]
+        public async Task NextPage()
+        {
+            await Task.Yield();
+        }
+
     }
 }

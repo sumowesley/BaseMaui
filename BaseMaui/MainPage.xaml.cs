@@ -7,10 +7,12 @@ namespace BaseMaui
     public partial class MainPage : ContentPage
     {
         //int count = 0;
+        readonly MainPageViewModel VM;
 
-        public MainPage()
+        public MainPage(MainPageViewModel viewModel)
         {
             InitializeComponent();
+            BindingContext = VM = viewModel;
         }
 
         // protected override void OnNavigatedTo(NavigatedToEventArgs args)

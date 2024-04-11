@@ -89,11 +89,11 @@
         </ScrollView>
 
         <Grid Grid.Row="2" ZIndex="1" HorizontalOptions="Fill" VerticalOptions="End" x:Name="VATStatusPageFooter"  Background="Red" Padding="0,48,0,32">
-            <Button Text="floating Save Button" Padding="12" HorizontalOptions="Center"/>
+            <Button Text="floating Save Button" Padding="12" HorizontalOptions="Center"  Command="{Binding NextPageCommand}"/>
         </Grid>
 
         <Grid.GestureRecognizers>
-            <TapGestureRecognizer Command="NextPage"/>
+            <TapGestureRecognizer Tapped="GetPosition"/>
         </Grid.GestureRecognizers>
     </Grid>
 
