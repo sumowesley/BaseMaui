@@ -9,7 +9,7 @@
 
     <ShellContent
         Title="Home"
-        nalu:Navigation.PageType="MainPage"
+        nalu:Navigation.PageType="local:MainPage"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
 

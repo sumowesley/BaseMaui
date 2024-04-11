@@ -13,7 +13,7 @@ namespace BaseMaui
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
-                .UseNaluNavigation<App>(nav => nav.AddPages((pageType) => pageType.Name.Replace("Page", "ViewModel")))
+                .UseNaluNavigation<App>(nav => nav.AddPages((pageType) => pageType.Replace("Page", "PageViewModel")))
                 .UseInsets()
                 .ConfigureFonts(fonts =>
                 {

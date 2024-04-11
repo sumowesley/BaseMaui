@@ -1,8 +1,10 @@
-﻿namespace BaseMaui
+﻿using Nalu;
+
+namespace BaseMaui
 {
-    public partial class AppShell : Shell
+    public partial class AppShell : NaluShell
     {
-        public AppShell()
+        public AppShell(INavigationService navigationService) : base(navigationService, typeof(MainPage))
         {
             InitializeComponent();
         }
