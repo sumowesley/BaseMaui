@@ -3,7 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BaseMaui.TwoPage"
              Title="TwoPage">
+    <ContentPage.Resources>
+        <Style TargetType="Entry" x:Key="OnPage_EntryField">
+            <Setter Property="TextColor" Value="Gray" />
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="Background" Value="LightCyan"/>
+            <Setter Property="HeightRequest" Value="44" />
+            <Setter Property="VerticalTextAlignment" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
     <VerticalStackLayout VerticalOptions="Center">
+        <Entry Text="Some text to edit" Placeholder="Enter your text here" Style="{StaticResource OnPage_EntryField}" />
         <Label 
             Text="Page Two"
             VerticalOptions="Center" 

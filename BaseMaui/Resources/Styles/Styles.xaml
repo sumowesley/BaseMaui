@@ -423,4 +423,12 @@
         <Setter Property="SelectedTabColor" Value="{AppThemeBinding Light={StaticResource Gray950}, Dark={StaticResource Gray200}}" />
     </Style>
 
+    <Style TargetType="Entry" x:Key="Global_EntryField">
+        <Setter Property="TextColor" Value="Gray" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="Background" Value="LightSalmon"/>
+        <Setter Property="HeightRequest" Value="44" />
+        <Setter Property="VerticalTextAlignment" Value="Center" />
+    </Style>
+
 </ResourceDictionary>
