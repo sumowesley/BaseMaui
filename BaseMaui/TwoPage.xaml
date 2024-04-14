@@ -13,7 +13,7 @@
         </Style>
     </ContentPage.Resources>
     <VerticalStackLayout VerticalOptions="Center">
-        <Entry Text="Some text to edit" Placeholder="Enter your text here" Style="{StaticResource OnPage_EntryField}" />
+        <Entry Text="Some text to edit" Placeholder="Enter your text here" Style="{StaticResource Global_EntryField}" />
         <Label 
             Text="Page Two"
             VerticalOptions="Center" 
