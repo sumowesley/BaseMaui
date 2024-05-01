@@ -19,6 +19,9 @@ namespace BaseMaui
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
 
+            builder.Services.AddSingleton<MainPage>();
+            builder.Services.AddSingleton<MainPageViewModel>();
+
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif

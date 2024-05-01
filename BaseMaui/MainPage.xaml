@@ -47,7 +47,7 @@
             <local:OverlapConverter x:Key="OverlapConverter" />
         </ResourceDictionary>
     </ContentPage.Resources>
-    <Grid RowDefinitions="Auto,Auto,*" HorizontalOptions="Fill" VerticalOptions="Fill" x:Name="SubscriptionPageGrid">
+    <!--<Grid RowDefinitions="Auto,Auto,*" HorizontalOptions="Fill" VerticalOptions="Fill" x:Name="SubscriptionPageGrid">
         <Grid Grid.Row="0" Background="Red" HeightRequest="80">
             <Label Text="Nav Header Row" TextColor="White"/>
         </Grid>
@@ -95,6 +95,7 @@
         <Grid.GestureRecognizers>
             <TapGestureRecognizer Tapped="GetPosition"/>
         </Grid.GestureRecognizers>
-    </Grid>
+    </Grid>-->
+    <Label Text="This is the app now" VerticalOptions="Center" HorizontalOptions="Center"/>
 
 </ContentPage>
