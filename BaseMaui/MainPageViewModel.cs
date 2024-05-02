@@ -1,6 +1,7 @@
 ﻿using CommunityToolkit.Mvvm.Input;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -52,14 +53,14 @@ namespace BaseMaui
         [RelayCommand]
         public void StrikeOne()
         {
-
+            Debug.WriteLine("StrikeOne");
         }
 
 
         [RelayCommand]
-        public void StrikwTwo()
+        public void StrikeTwo()
         {
-
+            Debug.WriteLine("StrikeTwo");
         }
 
     }

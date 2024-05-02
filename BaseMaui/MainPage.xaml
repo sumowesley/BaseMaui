@@ -98,4 +98,84 @@
     </Grid>-->
     <Label Text="This is the app now" VerticalOptions="Center" HorizontalOptions="Center"/>
 
+    <Grid RowDefinitions="Auto,*" HorizontalOptions="Fill" VerticalOptions="Fill">
+        <Grid Grid.Row="0" HeightRequest="80" HorizontalOptions="Fill" Background="Pink" ColumnDefinitions="*,Auto,Auto">
+            <Button Grid.Column="1" Text="Button 1" HorizontalOptions="End" VerticalOptions="Center"/>
+            <Button Grid.Column="2" Text="Button 2" HorizontalOptions="End" VerticalOptions="Center"/>
+        </Grid>
+
+        <ScrollView Grid.Row="1" Margin="1,0,1,0" HorizontalOptions="Fill" VerticalOptions="Fill">
+            <Grid RowDefinitions="Auto,Auto" HorizontalOptions="Fill" Padding="12,0,12,0" MaximumWidthRequest="774" Margin="0,32,0,0">
+                <Border Grid.Row="1" HorizontalOptions="Fill" VerticalOptions="Fill" StrokeShape="RoundRectangle 24" StrokeThickness="2" Stroke="Pink" Padding="24">
+                    <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" HorizontalOptions="Fill" VerticalOptions="Fill" x:Name="ConnectionNameContainer">
+                        <Label Grid.Row="0" Text="This is a title of a task list" FontSize="16" FontAttributes="Bold" HorizontalTextAlignment="Start" TextColor="White"  Margin="0,0,0,24"/>
+                        <HorizontalStackLayout Grid.Row="1">
+                            <Switch Grid.Row="1" x:Name="FirstSwitch"/>
+                            <Label Text="Show Button"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Grid.Row="2">
+                            <Switch x:Name="SecondSwitch"/>
+                            <Label Text="Turn Border Behavior on"/>
+                        </HorizontalStackLayout>
+                        <HorizontalStackLayout Grid.Row="3" Margin="0,0,0,24">
+                            <Switch  x:Name="ThirdSwitch"/>
+                            <Label Text="Turn Grid Behavior on"/>
+                        </HorizontalStackLayout>
+                        
+
+                        <VerticalStackLayout Grid.Row="4" HorizontalOptions="Fill" BindableLayout.ItemsSource="{Binding TeamList}" Spacing="28" Margin="0,0,0,0" x:Name="TaskList" MaximumWidthRequest="774">
+                            <BindableLayout.ItemTemplate>
+                                <DataTemplate>
+                                    <Grid ColumnDefinitions="Auto,*,Auto" ColumnSpacing="24" HorizontalOptions="Fill" VerticalOptions="Fill" x:Name="TaskListItemContainer">
+                                        <!--<Button Grid.Column="0" Text="Click" TextColor="White"
+                                            Command="{Binding Path=StrikeOneCommand, Source={RelativeSource AncestorType={x:Type local:MainPageViewModel}}}"/>-->
+
+                                        <Border StrokeShape="Ellipse" Stroke="Pink" StrokeThickness="2" HeightRequest="24" WidthRequest="24" x:Name="PinkButton" Background="Pink" IsVisible="{Binding IsToggled, Source={x:Reference FirstSwitch}}">
+                                            <Border.Behaviors>
+                                                <toolkit:TouchBehavior
+                                                    DefaultAnimationDuration="100"
+                                                    DefaultAnimationEasing="{x:Static Easing.CubicInOut}"
+                                                    PressedScale="0.9"
+                                                    IsEnabled="{Binding IsToggled, Source={x:Reference SecondSwitch}}"
+                                                    ShouldMakeChildrenInputTransparent="True"
+                                                    Command="{Binding Source={x:Reference PageContainer}, Path=BindingContext.StrikeOneCommand}"/>
+                                            </Border.Behaviors>
+                                        </Border>
+
+                                       <Border StrokeShape="Ellipse" Stroke="White" StrokeThickness="2" HeightRequest="24" WidthRequest="24" Background="White" >
+                                            <Border.Triggers>
+                                                <DataTrigger TargetType="Border" Binding="{Binding IsVisible, Source={x:Reference PinkButton}}" Value="True">
+                                                    <Setter Property="IsVisible" Value="False"/>
+                                                </DataTrigger>
+                                            </Border.Triggers>
+                                        </Border>
+
+                                        <Grid Grid.Column="1" HorizontalOptions="Fill" RowDefinitions="Auto,Auto,Auto,Auto,Auto">
+                                            <Label Grid.Row="0" Text="{Binding CurrentTouchState, Source={x:Reference Touch}}" FontSize="14" FontAttributes="Bold"/>
+                                            <Label Grid.Row="1" Text="{Binding CurrentTouchStatus, Source={x:Reference Touch}}" FontSize="12" FontAttributes="Bold"/>
+                                            <Label Grid.Row="2" Text="{Binding CurrentHoverState, Source={x:Reference Touch}}" FontSize="14" FontAttributes="Bold"/>
+                                            <Label Grid.Row="3" Text="{Binding CurrentHoverStatus, Source={x:Reference Touch}}" FontSize="12" FontAttributes="Bold"/>
+                                            <Label Grid.Row="4" Text="{Binding CurrentInteractionStatus, Source={x:Reference Touch}}" FontSize="12" FontAttributes="Bold"/>
+                                        </Grid>
+
+                                        <Grid.Behaviors>
+                                            <toolkit:TouchBehavior  
+                                                x:Name="Touch"
+                                                DefaultAnimationDuration="100"
+                                                DefaultAnimationEasing="{x:Static Easing.CubicInOut}"
+                                                PressedScale="0.9"
+                                                IsEnabled="{Binding IsToggled, Source={x:Reference ThirdSwitch}}"
+                                                ShouldMakeChildrenInputTransparent="{Binding IsToggled, Source={x:Reference ThirdSwitch}}"
+                                                Command="{Binding Source={x:Reference PageContainer}, Path=BindingContext.StrikeTwoCommand}"/>
+                                        </Grid.Behaviors>
+                                    </Grid>
+                                </DataTemplate>
+                            </BindableLayout.ItemTemplate>
+                        </VerticalStackLayout>
+                    </Grid>
+                </Border>
+            </Grid>
+        </ScrollView>
+    </Grid>
+
 </ContentPage>
