@@ -52,19 +52,19 @@ namespace BaseMaui
 
 
         [RelayCommand]
-        public async void ButtonOneClicked()
+        public async Task ButtonOneClicked()
         {
             await AppShell.Current.DisplayAlert("", "Button One Clicked", "OK");
         }
 
         [RelayCommand]
-        public async void ButtonTwoClicked()
+        public async Task ButtonTwoClicked()
         {
             await AppShell.Current.DisplayAlert("", "Button Two Clicked", "OK");
         }
 
         [RelayCommand]
-        public async void GridClicked()
+        public async Task GridClicked()
         {
             await AppShell.Current.DisplayAlert("", "Grid Clicked using toolkit TouchBehavior", "OK");
         }
