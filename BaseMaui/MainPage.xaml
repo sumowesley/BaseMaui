@@ -96,7 +96,7 @@
             <TapGestureRecognizer Tapped="GetPosition"/>
         </Grid.GestureRecognizers>
     </Grid>-->
-    <Label Text="This is the app now" VerticalOptions="Center" HorizontalOptions="Center"/>
+    <!--<Label Text="This is the app now" VerticalOptions="Center" HorizontalOptions="Center"/>-->
 
     <Grid RowDefinitions="Auto,*" HorizontalOptions="Fill" VerticalOptions="Fill" Background="Black">
         <Grid Grid.Row="0" HeightRequest="80" HorizontalOptions="Fill" Background="Pink" ColumnDefinitions="*,Auto,Auto">
