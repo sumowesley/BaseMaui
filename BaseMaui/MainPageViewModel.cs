@@ -69,6 +69,17 @@ namespace BaseMaui
             await AppShell.Current.DisplayAlert("", "Grid Clicked using toolkit TouchBehavior", "OK");
         }
 
+        [RelayCommand]
+        public async Task ScreenOneClicked() {
+            await Shell.Current.GoToAsync("ScreenOnePage");
+        }
+
+        [RelayCommand]
+        public async Task ScreenTwoClicked()
+        {
+            await AppShell.Current.GoToAsync("ScreenTwoPage");
+        }
+
     }
 
 
