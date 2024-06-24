@@ -71,13 +71,13 @@ namespace BaseMaui
 
         [RelayCommand]
         public async Task ScreenOneClicked() {
-            await Shell.Current.GoToAsync("ScreenOnePage");
+            await Shell.Current.GoToAsync("ScreenOnePage",true);
         }
 
         [RelayCommand]
         public async Task ScreenTwoClicked()
         {
-            await AppShell.Current.GoToAsync("ScreenTwoPage");
+            await Shell.Current.GoToAsync("ScreenTwoPage",true);
         }
 
     }

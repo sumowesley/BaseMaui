@@ -8,7 +8,7 @@ namespace BaseMaui {
         [RelayCommand]
         public async Task GoBack() 
         {
-            await Shell.Current.GoToAsync("..");
+            await Shell.Current.GoToAsync("..",true);
         }
     }
 
