@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Maui;
+using CustomShellMaui;
 using Microsoft.Extensions.Logging;
 using The49.Maui.Insets;
 
@@ -12,6 +13,7 @@ namespace BaseMaui
             builder
                 .UseMauiApp<App>()
                 .UseMauiCommunityToolkit()
+                .UseCustomShellMaui()
                 .UseInsets()
                 .ConfigureFonts(fonts =>
                 {
