@@ -99,9 +99,11 @@
     <!--<Label Text="This is the app now" VerticalOptions="Center" HorizontalOptions="Center"/>-->
 
     <Grid RowDefinitions="Auto,*" HorizontalOptions="Fill" VerticalOptions="Fill" Background="Black">
-        <Grid Grid.Row="0" HeightRequest="80" HorizontalOptions="Fill" Background="Pink" ColumnDefinitions="*,Auto,Auto">
+        <Grid Grid.Row="0" HeightRequest="80" HorizontalOptions="Fill" Background="Pink" ColumnDefinitions="*,Auto,Auto,Auto,Auto">
             <Button Grid.Column="1" Text="Button 1" HorizontalOptions="End" VerticalOptions="Center" Command="{Binding ButtonOneClickedCommand}"/>
             <Button Grid.Column="2" Text="Button 2" HorizontalOptions="End" VerticalOptions="Center" Command="{Binding ButtonTwoClickedCommand}"/>
+            <Button Grid.Column="3" Text="Screen 1" HorizontalOptions="End" VerticalOptions="Center" Command="{Binding ScreenOneClickedCommand}"/>
+            <Button Grid.Column="4" Text="Screen 2" HorizontalOptions="End" VerticalOptions="Center" Command="{Binding ScreenTwoClickedCommand}"/>
         </Grid>
 
         <ScrollView Grid.Row="1" Margin="1,0,1,0" HorizontalOptions="Fill" VerticalOptions="Fill">
