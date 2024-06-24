@@ -7,7 +7,7 @@
             InitializeComponent();
 
                 Routing.RegisterRoute("ScreenOnePage", typeof(ScreenOnePage));
-                //Routing.RegisterRoute(AlternateRoute2, typeof(ItemDetailsPage));
+                Routing.RegisterRoute("ScreenTwoPage", typeof(ScreenTwoPage));
         }
     }
 }

@@ -25,6 +25,8 @@ namespace BaseMaui
             builder.Services.AddSingleton<MainPageViewModel>();
             builder.Services.AddTransient<ScreenOnePage>();
             builder.Services.AddTransient<ScreenOnePageViewModel>();
+            builder.Services.AddTransient<ScreenTwoPage>();
+            builder.Services.AddTransient<ScreenTwoPageViewModel>();
 
 #if DEBUG
     		builder.Logging.AddDebug();

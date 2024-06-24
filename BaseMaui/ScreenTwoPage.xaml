@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BaseMaui.ScreenOnePage"
+             x:Class="BaseMaui.ScreenTwoPage"
              xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
              xmlns:local="clr-namespace:BaseMaui"
-             x:Name="ScreenOne"
+             x:Name="ScreenTwo"
              NavigationPage.HasNavigationBar="False"
              Shell.NavBarIsVisible="False">
 
     <VerticalStackLayout VerticalOptions="Center">
-        <Label Text="Screen One" HorizontalOptions="Center" VerticalOptions="Center"/>
+        <Label Text="Screen Two" HorizontalOptions="Center" VerticalOptions="Center"/>
         <Label Text="This is the content row" HorizontalOptions="Center" VerticalOptions="Center"/>
         <Button Text="Return to main page" Command="{Binding GoBackCommand}" VerticalOptions="Center" HorizontalOptions="Center"/>
     </VerticalStackLayout>
