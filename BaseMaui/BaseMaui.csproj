@@ -57,16 +57,19 @@
 	</ItemGroup>
 
 	<ItemGroup>
-		<PackageReference Include="CommunityToolkit.Maui" Version="8.0.1" />
+		<PackageReference Include="CommunityToolkit.Maui" Version="9.0.2" />
 		<PackageReference Include="CommunityToolkit.Mvvm" Version="8.2.2" />
-		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.14" />
-		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.14" />
+		<PackageReference Include="Microsoft.Maui.Controls" Version="8.0.61" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="8.0.61" />
 		<PackageReference Include="Microsoft.Extensions.Logging.Debug" Version="8.0.0" />
-		<PackageReference Include="Nalu.Maui.Navigation" Version="3.0.3" />
+		<PackageReference Include="Nalu.Maui.Navigation" Version="3.1.1" />
 		<PackageReference Include="The49.Maui.Insets" Version="1.0.0-alpha7" />
 	</ItemGroup>
 
 	<ItemGroup>
+	  <MauiXaml Update="PopupPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	  <MauiXaml Update="TwoPage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>

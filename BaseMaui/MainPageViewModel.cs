@@ -34,7 +34,7 @@ namespace BaseMaui
 
             // await Task.Yield();
             await _navigationService.GoToAsync(Navigation.Relative().Push<PopupPage>());
-        }}
+        }
 
     }
 }
