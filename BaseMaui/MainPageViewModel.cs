@@ -27,5 +27,14 @@ namespace BaseMaui
             await _navigationService.GoToAsync(Navigation.Relative().Push<TwoPage>());
         }
 
+
+        [RelayCommand]
+        public async Task ShowPopup()
+        {
+
+            // await Task.Yield();
+            await _navigationService.GoToAsync(Navigation.Relative().Push<PopupPage>());
+        }}
+
     }
 }
