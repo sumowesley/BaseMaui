@@ -1,4 +1,6 @@
-﻿using Nalu;
+﻿using Microsoft.Maui.Controls;
+using Nalu;
+using BaseMaui.Models;
 
 namespace BaseMaui
 {
@@ -7,6 +9,8 @@ namespace BaseMaui
         public App(INavigationService navigationService)
         {
             InitializeComponent();
+
+            Syncfusion.Licensing.SyncfusionLicenseProvider.RegisterLicense(Definitions.SyncFusionID);
 
             MainPage = new AppShell(navigationService);
         }

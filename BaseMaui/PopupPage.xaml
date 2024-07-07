@@ -1,12 +1,98 @@
 <?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
-             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="BaseMaui.PopupPage"
-             Title="PopupPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Welcome to .NET MAUI!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
-</ContentPage>
+<sfPopup:SfPopup xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 x:Class="BaseMaui.PopupPage"
+                 xmlns:sfPopup="clr-namespace:Syncfusion.Maui.Popup;assembly=Syncfusion.Maui.Popup"
+                 x:Name="popup"
+                 xmlns:sf="clr-namespace:Syncfusion.Maui.Core;assembly=Syncfusion.Maui.Core"
+                 xmlns:insets="https://schemas.the49.com/dotnet/2023/maui"
+                 insets:Insets.EdgeToEdge="True"
+                 xmlns:models="clr-namespace:BaseMaui.Models"
+                 xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+                 xmlns:local="clr-namespace:BaseMaui"
+                 x:DataType="local:PopupPageViewModel"   
+                 AppearanceMode="OneButton" 
+                 ShowFooter="False"
+                 ShowHeader="False"
+                 AnimationMode="Zoom"
+                 AnimationDuration="150"
+                 AutoSizeMode="Height"
+                 ShowCloseButton="False"
+                 IsFullScreen="True">
+
+    <!--<sfPopup:SfPopup.Resources>
+        <ResourceDictionary>
+            <toolkit:ItemTappedEventArgsConverter x:Key="ItemTappedEventArgsConverter" />
+            <conv:IsLessThanConverter x:Key="IsLessThanConverter" />
+
+            <x:Double x:Key="MinimumPopupWidth">500</x:Double>
+        </ResourceDictionary>
+    </sfPopup:SfPopup.Resources>-->
+
+
+    <sfPopup:SfPopup.PopupStyle>
+        <sfPopup:PopupStyle 
+            PopupBackground="Transparent"
+            MessageBackground="Transparent"
+            
+            OverlayColor="{OnIdiom #B3111111, Phone={DynamicResource PageBackground}, Tablet={OnPlatform {DynamicResource PageBackground}, WinUI=#B3111111}}"
+            CornerRadius="0"/>
+    </sfPopup:SfPopup.PopupStyle>
+
+    <sfPopup:SfPopup.ContentTemplate>
+        <DataTemplate>
+            <VerticalStackLayout>
+                <Label Text="Hello world" HorizontalOptions="Center"/>
+            </VerticalStackLayout>
+
+            <!--<Grid HorizontalOptions="Fill" VerticalOptions="Fill" Background="Transparent" x:Name="SelectionPopupOuterContianer" insets:Insets.CancelIOSPadding="True">
+                <ScrollView
+                    HorizontalOptions="Fill"
+                    VerticalOptions="Fill"
+                    Margin="1,0,1,0">
+
+                    <Border HorizontalOptions="Fill" VerticalOptions="Center" Background="{DynamicResource PageBackground}" Stroke="#333333" MaximumWidthRequest="700" StrokeThickness="1" InputTransparent="False" Margin="0,32,0,32">
+                        <Border.StrokeShape>
+                            <RoundRectangle CornerRadius="12"/>
+                        </Border.StrokeShape>
+
+                        <Grid HorizontalOptions="Fill" VerticalOptions="Fill" Padding="24" RowDefinitions="*">
+                            <forms:StandardSearchForm
+                                CloseBtnCommand="{Binding CancelCommand}"
+                                SearchBtnCommand="{Binding SearchCommand}"
+                                ClearSearchCommand="{Binding ClearSearchCommand}"
+                                HasError="{Binding ErrorInfo.HasErrors}"
+                                ErrorText="{Binding ErrorInfo.Errors}"
+                            />
+
+                            <Grid.Triggers>
+                                <DataTrigger TargetType="Grid" Binding="{Binding Source={RelativeSource AncestorType={x:Type vm:StandardSearchPopupViewModel}},Path=HamburgerActive}" Value="True">
+                                    <Setter Property="Padding" Value="18,32,18,32"/>
+                                </DataTrigger>
+                            </Grid.Triggers>
+                        </Grid>
+
+                        <Border.Triggers>
+                            <DataTrigger TargetType="Border" Binding="{Binding Source={RelativeSource AncestorType={x:Type vm:StandardSearchPopupViewModel}},Path=HamburgerActive}" Value="True">
+                                <Setter Property="VerticalOptions" Value="{OnIdiom Center, Phone=Fill}"/>
+                                <Setter Property="MaximumWidthRequest" Value="5000"/>
+                                <Setter Property="StrokeShape" Value="RoundRectangle 0"/>
+                                <Setter Property="StrokeThickness" Value="0"/>
+                                <Setter Property="Stroke" Value="Transparent"/>
+                                <Setter Property="Margin" Value="0"/>
+                            </DataTrigger>
+                        </Border.Triggers>
+                    </Border>
+
+                </ScrollView>
+
+                <Grid.Triggers>
+                    <DataTrigger TargetType="Grid" Binding="{Binding Source={RelativeSource AncestorType={x:Type vm:StandardSearchPopupViewModel}},Path=HamburgerActive}" Value="True">
+                        <Setter Property="Background" Value="{DynamicResource PageBackground}"/>
+                    </DataTrigger>
+                </Grid.Triggers>
+            </Grid>-->
+
+        </DataTemplate>
+    </sfPopup:SfPopup.ContentTemplate>
+</sfPopup:SfPopup>

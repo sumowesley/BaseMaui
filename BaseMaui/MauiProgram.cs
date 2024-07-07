@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Logging;
 using The49.Maui.Insets;
 using Nalu;
+using Syncfusion.Maui.Core.Hosting;
 
 namespace BaseMaui
 {
@@ -23,6 +24,8 @@ namespace BaseMaui
 
             builder.Services.AddSingleton<MainPage>();
             builder.Services.AddSingleton<MainPageViewModel>();
+
+            builder.ConfigureSyncfusionCore();
 
 #if DEBUG
     		builder.Logging.AddDebug();
