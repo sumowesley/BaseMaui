@@ -11,17 +11,19 @@ namespace BaseMaui
 {
     public partial class PopupPageViewModel : ObservableObject
     {
-        readonly INavigationService _navigationService;
+        [ObservableProperty]
+        public bool isOpen = true;
 
-        public PopupPageViewModel(INavigationService navigationService)
+        public PopupPageViewModel()
         {
-            _navigationService = navigationService;
+
         }
 
         [RelayCommand]
         public async Task ClosePopup()
         {
-            await _navigationService.GoToAsync(Navigation.Relative().Pop());
+            await Task.Yield();
+            IsOpen= false;
         }
     }
 }

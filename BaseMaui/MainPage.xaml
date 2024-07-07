@@ -90,7 +90,8 @@
         </ScrollView>
 
         <Grid Grid.Row="2" ZIndex="1" HorizontalOptions="Fill" VerticalOptions="End" x:Name="VATStatusPageFooter"  Background="Red" Padding="0,48,0,32">
-            <Button Text="Action Button" Padding="12" HorizontalOptions="Center"  Command="{Binding NextPageCommand}"/>
+            <Button Text="Action Button" Padding="12"  Command="{Binding NextPageCommand}"/>
+            <Button Text="Popup" Padding="12"  Command="{Binding ShowPopupCommand}" />
         </Grid>
 
         <Grid.GestureRecognizers>

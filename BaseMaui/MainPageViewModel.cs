@@ -31,9 +31,12 @@ namespace BaseMaui
         [RelayCommand]
         public async Task ShowPopup()
         {
-
+            await Task.Yield();
             // await Task.Yield();
-            await _navigationService.GoToAsync(Navigation.Relative().Push<PopupPage>());
+            //await _navigationService.GoToAsync(Navigation.Relative().Push<PopupPage>());
+            PopupPageViewModel popupPageViewModel = new();
+            PopupPage popupPage = new(popupPageViewModel);
+            await popupPage.ShowAsync();
         }
 
     }

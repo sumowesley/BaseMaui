@@ -18,7 +18,8 @@
                  AnimationDuration="150"
                  AutoSizeMode="Height"
                  ShowCloseButton="False"
-                 IsFullScreen="True">
+                 IsFullScreen="False"
+                 IsOpen="{Binding IsOpen}">
 
     <!--<sfPopup:SfPopup.Resources>
         <ResourceDictionary>
@@ -43,6 +44,7 @@
         <DataTemplate>
             <VerticalStackLayout>
                 <Label Text="Hello world" HorizontalOptions="Center"/>
+                <Button Text="Close" Command="{Binding ClosePopupCommand}" />
             </VerticalStackLayout>
 
             <!--<Grid HorizontalOptions="Fill" VerticalOptions="Fill" Background="Transparent" x:Name="SelectionPopupOuterContianer" insets:Insets.CancelIOSPadding="True">
